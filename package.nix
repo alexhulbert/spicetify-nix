@@ -17,7 +17,6 @@
   exposeApis ? true,
   disableUpgradeCheck ? true,
   experimentalFeatures ? false,
-  home ? false,
 }:
 
 let
@@ -108,7 +107,6 @@ pkgs.spotify-unwrapped.overrideAttrs (oldAttrs: rec {
       expose_apis ${boolToString exposeApis } \
       disable_upgrade_check ${boolToString disableUpgradeCheck } \
       experimental_features ${boolToString experimentalFeatures } \
-      home ${boolToString home } \
 
     ${spicetify} backup apply
 

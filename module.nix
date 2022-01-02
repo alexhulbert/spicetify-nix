@@ -73,10 +73,6 @@ in {
       type = types.bool;
       default = false;
     };
-    home = mkOption {
-      type = types.bool;
-      default = false;
-    };
   };
 
   config = mkIf cfg.enable {
@@ -101,7 +97,6 @@ in {
           exposeApis
           disableUpgradeCheck
           experimentalFeatures
-          home
         ;
       })
     ];
