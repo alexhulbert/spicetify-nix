@@ -16,7 +16,6 @@
   removeRtlRule ? true,
   exposeApis ? true,
   disableUpgradeCheck ? true,
-  fastUserSwitching ? false,
   experimentalFeatures ? false,
   home ? false,
 }:
@@ -108,7 +107,6 @@ pkgs.spotify-unwrapped.overrideAttrs (oldAttrs: rec {
       remove_rtl_rule ${boolToString removeRtlRule } \
       expose_apis ${boolToString exposeApis } \
       disable_upgrade_check ${boolToString disableUpgradeCheck } \
-      fastUser_switching ${boolToString fastUserSwitching } \
       experimental_features ${boolToString experimentalFeatures } \
       home ${boolToString home } \
 

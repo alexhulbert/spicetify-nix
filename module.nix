@@ -69,10 +69,6 @@ in {
       type = types.bool;
       default = true;
     };
-    fastUserSwitching = mkOption {
-      type = types.bool;
-      default = false;
-    };
     experimentalFeatures = mkOption {
       type = types.bool;
       default = false;
@@ -104,7 +100,6 @@ in {
           removeRtlRule
           exposeApis
           disableUpgradeCheck
-          fastUserSwitching
           experimentalFeatures
           home
         ;
