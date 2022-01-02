@@ -17,13 +17,8 @@
   exposeApis ? true,
   disableUpgradeCheck ? true,
   fastUserSwitching ? false,
-  visualizationHighFramerate ? false,
-  radio ? false,
-  songPage ? false,
   experimentalFeatures ? false,
   home ? false,
-  lyricAlwaysShow ? false,
-  lyricForceNoSync ? false
 }:
 
 let
@@ -40,7 +35,10 @@ let
   spicetifyPkg = pkgs.callPackage ./spicetify.nix {};
   spicetify = "SPICETIFY_CONFIG=. ${spicetifyPkg}/spicetify";
 
-  themes = import ./themes-src.nix;
+  themes = pkgs.fetchzip {
+    url = https://github.com/TonyTheAce/spicetify-themes/archive/refs/tags/2.8.0.zip;
+    sha256 = "0bhixyln8fzgfw2n681pxlavkn83hhpsz4m8pcyxxf0lbvdyfc1g";
+  };
 
   # Dribblish is a theme which needs a couple extra settings
   isDribblish = theme == "Dribbblish";
@@ -106,13 +104,8 @@ pkgs.spotify-unwrapped.overrideAttrs (oldAttrs: rec {
       expose_apis ${boolToString exposeApis } \
       disable_upgrade_check ${boolToString disableUpgradeCheck } \
       fastUser_switching ${boolToString fastUserSwitching } \
-      visualization_high_framerate ${boolToString visualizationHighFramerate } \
-      radio ${boolToString radio } \
-      song_page ${boolToString songPage } \
       experimental_features ${boolToString experimentalFeatures } \
       home ${boolToString home } \
-      lyric_always_show ${boolToString lyricAlwaysShow } \
-      lyric_force_no_sync ${boolToString lyricForceNoSync }
 
     ${spicetify} backup apply
 

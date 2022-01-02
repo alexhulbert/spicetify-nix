@@ -73,31 +73,11 @@ in {
       type = types.bool;
       default = false;
     };
-    visualizationHighFramerate = mkOption {
-      type = types.bool;
-      default = false;
-    };
-    radio = mkOption {
-      type = types.bool;
-      default = false;
-    };
-    songPage = mkOption {
-      type = types.bool;
-      default = false;
-    };
     experimentalFeatures = mkOption {
       type = types.bool;
       default = false;
     };
     home = mkOption {
-      type = types.bool;
-      default = false;
-    };
-    lyricAlwaysShow = mkOption {
-      type = types.bool;
-      default = false;
-    };
-    lyricForceNoSync = mkOption {
       type = types.bool;
       default = false;
     };
@@ -125,13 +105,8 @@ in {
           exposeApis
           disableUpgradeCheck
           fastUserSwitching
-          visualizationHighFramerate
-          radio
-          songPage
           experimentalFeatures
           home
-          lyricAlwaysShow
-          lyricForceNoSync
         ;
       })
     ];
