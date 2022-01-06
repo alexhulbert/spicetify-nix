@@ -35,7 +35,7 @@ let
 
   themes = pkgs.fetchzip {
     url = https://github.com/TonyTheAce/spicetify-themes/archive/refs/tags/2.8.0.tar.gz;
-    sha256 = "1aq0g9lriasb54dzhm51d4fx6d7p6vwci4sh9sp4852v98m2f1xx";
+    sha256 = "0k8vz3wxf5yx5bq8hdscjywblbdlbli2ddifqrs6v3200rayd5jf";
   };
 
   # Dribblish is a theme which needs a couple extra settings
