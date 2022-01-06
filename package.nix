@@ -20,7 +20,6 @@
 }:
 
 let
-
   inherit (pkgs.lib.lists) foldr;
   inherit (pkgs.lib.attrsets) mapAttrsToList;
 
@@ -55,9 +54,7 @@ let
 
   extensionString = pipeConcat ((if isDribblish then [ "dribbblish.js" ] else []) ++ enabledExtensions);
   customAppsString = pipeConcat enabledCustomApps;
-
 in
-
 pkgs.spotify-unwrapped.overrideAttrs (oldAttrs: rec {
   postInstall=''
     touch $out/prefs
@@ -101,7 +98,6 @@ pkgs.spotify-unwrapped.overrideAttrs (oldAttrs: rec {
           ''spotify_launch_flags "${spotifyLaunchFlags}" \'' 
         else 
           ''\'' }
-
       inject_css ${injectCssOrDribblish} \
       replace_colors ${replaceColorsOrDribblish} \
       overwrite_assets ${overwriteAssetsOrDribblish} \
