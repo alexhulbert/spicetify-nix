@@ -35,7 +35,7 @@ let
   spicetify = "SPICETIFY_CONFIG=. ${spicetifyPkg}/spicetify";
 
   themes = pkgs.fetchzip {
-    url = https://github.com/TonyTheAce/spicetify-themes/archive/refs/tags/2.8.0.tar.gz;
+    url = https://github.com/TonyTheAce/spicetify-themes/archive/refs/tags/2.8.5.tar.gz;
     sha256 = "0k8vz3wxf5yx5bq8hdscjywblbdlbli2ddifqrs6v3200rayd5jf";
   };
 
