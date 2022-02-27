@@ -10,6 +10,8 @@ stdenv.mkDerivation rec {
   };
 
   sourceRoot = ".";
+  
+  runtimeDependencies = [pkgs.xorg.xrdb];
 
   installPhase = ''
     mkdir -p $out
